@@ -66,16 +66,22 @@ import org.bukkit.inventory.meta.ItemMeta;
 	if (player.hasPlayedBefore() == false){
 		player.sendMessage(ChatColor.GREEN + "Hey, you're new. Have some food");
 		player.getInventory().addItem(new ItemStack(Material.APPLE, 1));
-		ItemStack selector = new ItemStack(Material.WOOD_SWORD);
-		ItemMeta selectorMeta = selector.getItemMeta();
-		selectorMeta.setDisplayName("GameMode Selector");
-		selector.setItemMeta(selectorMeta);
+
+		}
+	ItemStack selector = new ItemStack(Material.WOOD_SWORD);
+	ItemMeta selectorMeta = selector.getItemMeta();
+	selectorMeta.setDisplayName("GameMode Selector");
+	selector.setItemMeta(selectorMeta);
+	if (!e.getPlayer().getInventory().contains(selector)){
+		
 		if (player.hasPermission("have.selector")){
 		e.getPlayer().getInventory().addItem(selector);
 		}
 	}
-	
+		
 	}
+	
+	
 	@EventHandler
 	public void killZombie(EntityDeathEvent e){
 		Entity deadEntity = e.getEntity();
