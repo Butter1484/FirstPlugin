@@ -1,0 +1,27 @@
+name: FirstPlugin
+main: com.github.butter1484.FirstPlugin
+version: 1.0
+commands:
+   givemeitems:
+      description: Gives items
+      useage: /<command>
+   teleportme:
+      description: Teleports to a random location
+      useage: /<command>
+   healplayer:
+      description: Heal a player
+      useage: /<command>
+   totalexp:
+      description: Check players experience
+      useage: /<command>
+   zombiekills:
+      description: Check zombie kills
+      useage: /<command>
+permissions:
+   firstplugin.*:
+      description: All Permissions
+      children:
+         giveItems.use: true
+         place.bedrock: true
+         place.glowstone: true
+         have.Selector: true
